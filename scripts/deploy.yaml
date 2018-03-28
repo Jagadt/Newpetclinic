@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: newpetclinic
+  
+spec:
+  containers:
+  - name: newpetclinic
+    image: coeazurecontainersreg.azurecr.io/jagadt/newpetclinic:180
+    ports:
+    - containerPort: 8080
+      protocol: TCP
