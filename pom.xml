@@ -443,7 +443,7 @@
                 <jpa.database>MYSQL</jpa.database>
                 <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
                 <jdbc.url>jdbc:mysql://mysqldbserverpoc:3306/mysqldbserverpoc.mysql.database.azure.com?useSSL=true&requireSSL=false</jdbc.url>
-                <jdbc.username>sqladmin</jdbc.username>
+                <jdbc.username>sqladmin@mysqldbserverpoc</jdbc.username>
                 <jdbc.password>YUVanika!234</jdbc.password>
             </properties>
             <dependencies>
