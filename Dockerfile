@@ -10,4 +10,4 @@ RUN cd /src && mvn install -Dmaven.test.skip=true
 
 RUN mv /src/target/petclinic.war /usr/local/tomcat/webapps/petclinic.war
 
-EXPOSE 8080
+EXPOSE 8081
