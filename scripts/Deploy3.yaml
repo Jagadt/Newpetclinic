@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: newpetclinictest
+  
+spec:
+  containers:
+  - name: newpetclinictest3
+    image: coeazurecontainersreg.azurecr.io/jagadt/newpetclinic:latest
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: newpetclinictest
+  
+spec:
+  strategy:
+    type: Recreate
+  replicas: 1
+  template:
+    metadata:
+      labels:
+          app: pet
+    spec:
+      containers:
+      - name: newpetclinictest1
+        image: coeazurecontainersreg.azurecr.io/jagadt/newpetclinic:latest
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: newpetclinictest1
+  
+spec:
+  ports:
+    # the port that this service should serve on
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    name: newpetclinictest
+    app: petclinic
+  type: LoadBalancer
